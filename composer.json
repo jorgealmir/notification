@@ -12,5 +12,13 @@
     "minimum-stability": "dev",
     "require": {
         "phpmailer/phpmailer": "6.0.*"
+    },
+    "config": {
+        "vendor-dir": "vendor"
+    },
+    "autoload": {
+        "psr-4": {
+            "Notification\\": "_app/"
+        }
     }
 }
