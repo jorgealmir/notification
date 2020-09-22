@@ -1,0 +1,14 @@
+{
+    "name": "jorgealmirmartins/notification",
+    "description": "Generation notification by email.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jorge Almir Martins",
+            "email": "jorgealmirmartins@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
