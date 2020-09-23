@@ -11,20 +11,29 @@ class Email
     /** @var stdClass */
     private $mail;
 
-    public function __construct() {
+    public function __construct(
+        $smtpDebug, 
+        $host,
+        $user,
+        $pass,
+        $smtpSecure,
+        $port,
+        $setFromEmail,
+        $setFromName
+    ) {
         $this->mail = new PHPMailer(true);
-//        $this->mail->SMTPDebug = 2;
+        $this->mail->SMTPDebug = $smtpDebug;
         $this->mail->isSMTP();
-        $this->mail->Host = 'smtpi.kinghost.net';
+        $this->mail->Host = $host;
         $this->mail->SMTPAuth = true;
-        $this->mail->Username = 'jorgealmir@drevekcontabil.com.br';
-        $this->mail->Password = 'Fortuito1964';
-        $this->mail->SMTPSecure = "tls";
-        $this->mail->Port = 587;
+        $this->mail->Username = $user;
+        $this->mail->Password = $pass;
+        $this->mail->SMTPSecure = $smtpSecure;
+        $this->mail->Port = $port;
         $this->mail->CharSet = "utf-8";
         $this->mail->setLanguage("br");
         $this->mail->isHTML();
-        $this->mail->setFrom('jorgealmir@drevekcontabil.com.br', 'Jorge Almir Martins');
+        $this->mail->setFrom($setFromEmail, $setFromName);
     }
     
     public function sendMail(
