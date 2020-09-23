@@ -4,24 +4,22 @@ require __DIR__ . '/../vendor/autoload.php';
 
 use Notification\Email;
 
-$novoEmail = new Email(
+$email = new Email(
     2, 
-    "smtpi.kinghost.net", 
-    "jorgealmir@drevekcontabil.com.br", 
-    "Fortuito1964", 
-    "tls", 
-    "587", 
-    "jorgealmir@drevekcontabil.com.br", 
-    "Jorge Almir Martins"
+    "mail.host.com", 
+    "your@email.com", 
+    "your-pass", 
+    "smtp secure (tls / ssl)", 
+    "port (587)",
+    "from@email.com", 
+    "From Name"
 );
 
-$novoEmail->sendMail(
-    "Assunto de Teste",
-    "<p>Esse é um email de <b>teste</b></p>",
-    "jorge@drevekcontabil.com.br",
-    "Jorge (Reply)",
-    "jorgealmirmartins@gmail.com",
-    "Jorge (Destinatário)"
+$email->sendEmail(
+    "SUbject", 
+    "Content", 
+    "reply@email.com", 
+    "Replay Name", 
+    "address@email.com", 
+    "Address Name"
 );
-
-var_dump($novoEmail);
